@@ -1,3 +1,16 @@
-The OpenShift `php` cartridge documentation can be found at:
+The OpenShift `Drupal Commerce Kickstart` cartridge
+===================================================
 
-https://github.com/openshift/origin-server/tree/master/cartridges/openshift-origin-cartridge-php/README.md
+Install instructions:
+---------------------
+
+- Enter in OpenShift app creation page
+- Choose Drupal 7
+- Define one name to your app
+- Change source code to http url for this git (ie: https://github.com/hugosenari/openshift-drupal-commerce-kickstart.git)
+
+
+Base Code
+---------
+This is one fork of:
+https://github.com/openshift/drupal-quickstart
