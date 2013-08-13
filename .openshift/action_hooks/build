@@ -67,14 +67,3 @@ if [ ! -e "${OPENSHIFT_REPO_DIR}php" ]
 then
   ln -s ${DRUPAL_INSTALL_DIR} ${OPENSHIFT_REPO_DIR}php
 fi
-
-#
-# OpenShift looks for PHP files inside of app-root/runtime/repo/php
-# This runs on every build to ensure that the link is present (since
-# repo is recreated)
-#
-if ! ln -s $DRUPAL_INSTALL_DIR ${OPENSHIFT_REPO_DIR}php
-then
-  echo "ERROR: Unable to link the PHP directory, Drupal cannot be used if the php directory already exists in your Git repository."
-  exit 8
-fi
