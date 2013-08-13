@@ -63,9 +63,10 @@ then
   ln -s $DRUPAL_SITE_DIR $DRUPAL_INSTALL_DIR/sites
 fi
 
+
+echo "Set Link from $DRUPAL_INSTALL_DIR to ${OPENSHIFT_REPO_DIR}php"
+
 if [ ! -e "${OPENSHIFT_REPO_DIR}php" ]
 then
   ln -s ${DRUPAL_INSTALL_DIR} ${OPENSHIFT_REPO_DIR}php
-else
-  echo "Link already set at $DRUPAL_INSTALL_DIR ${OPENSHIFT_REPO_DIR}php"
 fi
