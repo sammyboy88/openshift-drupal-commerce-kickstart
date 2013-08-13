@@ -1,5 +1,5 @@
 The OpenShift `Drupal Commerce Kickstart` cartridge
-===================================================
+---------------------------------------------------
 
 Install instructions:
 ---------------------
