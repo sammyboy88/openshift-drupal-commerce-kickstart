@@ -64,9 +64,15 @@ then
 fi
 
 
-echo "Set Link from $DRUPAL_INSTALL_DIR to ${OPENSHIFT_REPO_DIR}php"
-
-if [ ! -e "${OPENSHIFT_REPO_DIR}php" ]
+#
+# OpenShift looks for PHP files inside of app-root/runtime/repo/php
+# This runs on every build to ensure that the link is present (since
+# repo is recreated)
+#
+if [ ! -d "${OPENSHIFT_REPO_DIR}php" ]
 then
-  ln -s ${DRUPAL_INSTALL_DIR} ${OPENSHIFT_REPO_DIR}php
+  echo "Create link for $DRUPAL_INSTALL_DIR at ${OPENSHIFT_REPO_DIR}php"
+  ln -s $DRUPAL_INSTALL_DIR ${OPENSHIFT_REPO_DIR}php
+else
+  echo "Drupal Commerce Kickstart is already linked at ${OPENSHIFT_REPO_DIR}php"
 fi
